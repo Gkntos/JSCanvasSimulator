@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+  <head>
+    <title> Simula Vuelo</title>
+    <script src="Juego.js"></script>
+    <script src="init.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+  <div id="content">
+  <div id="menu">
+    <h2> Configuraci&oacute;n de Nave</h2>
+    
+    <div class="seleccion">
+      <h3>Tama&ntilde;o de Canvas</h3> 
+      <button onclick="Juego.resizeCanvas('medium');">Mediano</button>
+      <button onclick="Juego.resizeCanvas('large');">Grande</button>
+    </div>
+
+    
+    <div class="seleccion">
+      <h3>Figura de Nave</h3>
+      <button onclick="Juego.modificaNave('figura','circulo')">Circulo</button>
+      <button onclick="Juego.modificaNave('figura','triangulo')">Triangulo</button>
+      <button onclick="Juego.modificaNave('figura','cuadrado')">Cuadrado</button>      
+    </div>
+    
+    <div class="seleccion">
+      <h3>Color de Nave</h3>
+      <button class="rojo" onclick="Juego.modificaNave('color','red')">Rojo</button>
+      <button class="azul" onclick="Juego.modificaNave('color','blue')">Azul</button>
+      <button class="verde" onclick="Juego.modificaNave('color','green')">Verde</button>      
+    </div>
+
+    <div class="seleccion">
+      <h3>Ubicaci&oacute;n de Nave</h3>
+      <span class="coordenadas"> ( 
+        <input placeholder="x" /> , 
+        <input placeholder="y"/> ) </span>
+    </div>
+
+    <div class="seleccion">
+    <h3>Tipo de Movimiento</h3>
+      <input type="radio" name="movimiento" value="random" checked onclick="Juego.modificaNave('movimiento','random')"> Aleatorio
+      <br>
+      <input type="radio" name="movimiento" value="random" onclick="Juego.modificaNave('movimiento','direccion')"> Direcci&oacute;n
+      <span class="angulos"><input type="number" value=0 onchange="Juego.modificaNave('direccion', this.value)" > (grados). </span>
+    </div>
+
+  </div>  
+    <div id="cuadro">
+      <canvas id="juego" width="600px" height="450px"> </canvas>
+  </div>
+</div>
+  </body>
+</html>
